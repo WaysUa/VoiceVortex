@@ -1,4 +1,4 @@
-package com.main.voicevortex.core.resources.theme
+package com.main.voicevortex.resources.theme
 
 import androidx.compose.ui.graphics.Color
 

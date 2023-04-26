@@ -1,4 +1,4 @@
-package com.main.voicevortex.app
+package com.main.voicevortex
 
 import android.app.Application
 

@@ -1,4 +1,4 @@
-package com.main.voicevortex.core.resources.theme
+package com.main.voicevortex.resources.theme
 
 import android.app.Activity
 import android.os.Build
