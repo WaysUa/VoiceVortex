@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.Packaging
-
 plugins {
     id(Plugins.application)
     id(Plugins.android)
@@ -49,21 +47,24 @@ android {
 }
 
 dependencies {
-    // Basic
+    // Android
     implementation(Dependencies.Android.coreKtx)
     implementation(Dependencies.Android.lifecycleKtx)
     implementation(Dependencies.Android.activityCompose)
+    // Compose
     implementation(Dependencies.Compose.composeUi)
     implementation(Dependencies.Compose.composeGraphics)
     implementation(Dependencies.Compose.composePreviewTooling)
     implementation(Dependencies.Compose.composeMaterial3)
     implementation(Dependencies.Compose.composeMaterial)
-    testImplementation(Dependencies.Test.jUnit)
+    implementation(Dependencies.Compose.accompanist)
+    debugImplementation(Dependencies.Compose.Debug.composeUiTooling)
+    debugImplementation(Dependencies.Compose.Debug.composeUiTestManifest)
+    // Testing
     androidTestImplementation(Dependencies.Test.jUnitExt)
     androidTestImplementation(Dependencies.Test.jUnitUi)
     androidTestImplementation(Dependencies.Test.espresso)
-    debugImplementation(Dependencies.Compose.Debug.composeUiTooling)
-    debugImplementation(Dependencies.Compose.Debug.composeUiTestManifest)
+    testImplementation(Dependencies.Test.jUnit)
     // Navigation
     implementation(Dependencies.Navigation.navigationCompose)
     // Hilt

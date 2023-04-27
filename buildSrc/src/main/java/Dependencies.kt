@@ -8,6 +8,7 @@ object Dependencies {
         const val composePreviewTooling = "androidx.compose.ui:ui-tooling-preview"
         const val composeMaterial3 = "androidx.compose.material3:material3:1.1.0-rc01"
         const val composeMaterial = "androidx.compose.material:material:1.4.2"
+        const val accompanist = "com.google.accompanist:accompanist-systemuicontroller:0.31.1-alpha"
 
         object Debug {
             const val composeUiTooling = "androidx.compose.ui:ui-tooling"
