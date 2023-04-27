@@ -51,7 +51,7 @@ fun MainScreen(
                 startDestination = BottomNavigationScreen.Recording.id
             ) {
                 composable(BottomNavigationScreen.Recording.id) {
-                    RecordingScreen()
+                    RecordingScreen(settings)
                 }
 
                 composable(BottomNavigationScreen.Listening.id) {
