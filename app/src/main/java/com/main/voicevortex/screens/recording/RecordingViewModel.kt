@@ -20,7 +20,7 @@ class RecordingViewModel(
     override fun obtainEvent(event: RecordingEvent) {
         when (val currentState = _recordingViewState.value) {
             is RecordingViewState.Display -> reduce(event, currentState)
-            is RecordingViewState.Recording -> TODO()
+            is RecordingViewState.Recording -> reduce(event, currentState)
             else -> throw NotImplementedError("Unexpected recording state")
         }
     }
@@ -29,6 +29,10 @@ class RecordingViewModel(
         when(event) {
             RecordingEvent.EnterScreen -> {
                 _recordingViewState.value = RecordingViewState.Display
+            }
+
+            RecordingEvent.RecordingScreen -> {
+                _recordingViewState.value = RecordingViewState.Recording
             }
         }
     }

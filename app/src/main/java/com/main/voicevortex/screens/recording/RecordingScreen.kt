@@ -6,6 +6,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import com.main.voicevortex.screens.recording.models.RecordingEvent
 import com.main.voicevortex.screens.recording.models.RecordingViewState
 import com.main.voicevortex.screens.recording.view.RecordingViewDisplay
+import com.main.voicevortex.screens.recording.view.RecordingViewRecording
 
 @Composable
 fun RecordingScreen(
@@ -14,8 +15,10 @@ fun RecordingScreen(
     val viewState = recordingViewModel.recordingViewState.observeAsState()
 
     when (val state = viewState.value) {
-        RecordingViewState.Display -> RecordingViewDisplay()
-        RecordingViewState.Recording -> TODO()
+        RecordingViewState.Display -> RecordingViewDisplay {
+            recordingViewModel.obtainEvent(RecordingEvent.RecordingScreen)
+        }
+        RecordingViewState.Recording -> RecordingViewRecording()
         else -> throw NotImplementedError("Unexpected recording state")
     }
 

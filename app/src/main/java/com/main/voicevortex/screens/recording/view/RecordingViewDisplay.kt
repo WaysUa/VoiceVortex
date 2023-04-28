@@ -19,19 +19,20 @@ import com.main.voicevortex.ui.theme.orangeDarkPalette
 import com.main.voicevortex.ui.views.RoundedIconButton
 
 @Composable
-fun RecordingViewDisplay() {
+fun RecordingViewDisplay(
+    onRecordingClicked: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(baseDarkPalette.primaryBackground),
         contentAlignment = Alignment.BottomCenter
     ) {
-
         RoundedIconButton(
-            onClick = { },
+            onClick = { onRecordingClicked.invoke() },
             background = orangeDarkPalette.tintColor,
             size = 65.dp,
-            modifier = Modifier.padding(bottom = 10.dp)
+            modifier = Modifier.padding(bottom = 22.dp)
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.icon_microphone),
