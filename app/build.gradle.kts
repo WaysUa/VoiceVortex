@@ -58,6 +58,7 @@ dependencies {
     implementation(Dependencies.Compose.composeMaterial3)
     implementation(Dependencies.Compose.composeMaterial)
     implementation(Dependencies.Compose.accompanist)
+    implementation(Dependencies.Compose.composeLiveData)
     debugImplementation(Dependencies.Compose.Debug.composeUiTooling)
     debugImplementation(Dependencies.Compose.Debug.composeUiTestManifest)
     // Testing

@@ -9,6 +9,7 @@ object Dependencies {
         const val composeMaterial3 = "androidx.compose.material3:material3:1.1.0-rc01"
         const val composeMaterial = "androidx.compose.material:material:1.4.2"
         const val accompanist = "com.google.accompanist:accompanist-systemuicontroller:0.31.1-alpha"
+        const val composeLiveData = "androidx.compose.runtime:runtime-livedata:$version"
 
         object Debug {
             const val composeUiTooling = "androidx.compose.ui:ui-tooling"
@@ -26,7 +27,7 @@ object Dependencies {
         private const val version = "2.45"
 
         const val android = "com.google.dagger:hilt-android:$version"
-        const val navigation = "androidx.hilt:hilt-navigation-compose:1.0.0-rc01"
+        const val navigation = "androidx.hilt:hilt-navigation-compose:1.0.0"
         const val compiler = "com.google.dagger:hilt-compiler:$version"
     }
 

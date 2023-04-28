@@ -1,6 +1,5 @@
 package com.main.voicevortex.screens.main
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,19 +28,16 @@ import androidx.navigation.compose.rememberNavController
 import com.main.voicevortex.domain.SettingsBundle
 import com.main.voicevortex.screens.listening.ListeningScreen
 import com.main.voicevortex.screens.recording.RecordingScreen
-import com.main.voicevortex.screens.recording.view.BottomNavigationScreen
+import com.main.voicevortex.screens.recording.RecordingViewModel
 import com.main.voicevortex.ui.theme.VoiceVortexTheme
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
     navController: NavController,
     settings: SettingsBundle,
+    recordingViewModel: RecordingViewModel
 ) {
     val childNavController = rememberNavController()
-    val currentBottomNavigationScreen = remember {
-        mutableStateOf<BottomNavigationScreen>(BottomNavigationScreen.Recording)
-    }
     val items = listOf(BottomNavigationScreen.Recording, BottomNavigationScreen.Listening)
 
     Column {
@@ -51,7 +47,7 @@ fun MainScreen(
                 startDestination = BottomNavigationScreen.Recording.id
             ) {
                 composable(BottomNavigationScreen.Recording.id) {
-                    RecordingScreen(settings)
+                    RecordingScreen(recordingViewModel = recordingViewModel)
                 }
 
                 composable(BottomNavigationScreen.Listening.id) {
